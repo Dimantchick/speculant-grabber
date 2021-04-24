@@ -2,6 +2,10 @@
 
 Модуль граббера исторических свечей.
 
+## Зависимости
+
+Установить в локальный репозиторий [Core проект](https://github.com/Dimantchick/speculant-core).
+
 ## Начало работы
 
 Создать config.properties и application.properties (использовать .default файлы как основу).
