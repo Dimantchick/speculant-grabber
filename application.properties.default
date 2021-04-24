@@ -1,0 +1,22 @@
+# ===============================
+# DATABASE
+# ===============================
+
+## Setup your database
+spring.datasource.driver-class-name=
+spring.datasource.url=
+spring.datasource.username=
+spring.datasource.password=
+
+spring.jpa.generate-ddl=true
+spring.jpa.hibernate.ddl-auto=update
+
+#server
+server.port=8080
+
+#Logger
+logging.level.org.springframework=INFO
+logging.level.tk.dimantchick=DEBUG
+logging.file.name=./logs/core.log
+logging.logback.rollingpolicy.max-file-size=10MB
+

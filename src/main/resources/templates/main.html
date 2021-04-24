@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Grabber status</title>
+</head>
+<body>
+<p>Online</p>
+<b>Last 5 min action: </b>
+<br/>
+<i th:text="${last5minUpdate}">test</i>
+<br/>
+<b>Last Hour action: </b>
+<br/>
+<i th:text="${lastHourUpdate}">test</i>
+
+
+</body>
+</html>

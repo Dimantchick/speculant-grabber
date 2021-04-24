@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All instruments</title>
+
+    <style>
+        h2 {
+            text-align: center;
+            padding: 20px 0;
+        }
+        A:link {color: #225a00; text-decoration: none;
+        }
+        A:visited {color: #225a00;}
+        A:active {color: blue}
+        A:hover {text-decoration: none; color: #39a500;}
+
+        table {text-align: center; border-bottom: 2px solid #dfdfdf; border-radius: 6px; border-collapse: separate; border-spacing: 0px;}
+        table thead tr {color: #ffffff; font-weight: bold; background: #999999;}
+        table tr td {border-right: 1px solid #dfdfdf;}
+        table tr td:last-child {border-right: 0px;}
+        table tbody tr:nth-child(1n) {background: #f6f6f6;}
+        table tbody tr:nth-child(2n) {background: #e6e6e6;}
+        table tbody tr:hover {background: #ffe8e8; transition-duration: 0.6s;}
+    </style>
+</head>
+<body>
+<center>
+    <h2>All instruments</h2>
+    <table>
+        <thead>
+        <tr>
+            <th data-priority="1">Id</th>
+            <th data-priority="2">Figi</th>
+            <th data-priority="3">Ticker</th>
+            <th data-priority="4">Currency</th>
+            <th data-priority="5">Status</th>
+            <th data-priority="6">Enable</th>
+            <th data-priority="7">ReadyToBuy</th>
+            <th data-priority="8">Disable</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="instrument : ${instruments}">
+            <td th:text="${instrument.getId()}"></td>
+            <td th:text="${instrument.getFigi()}"></td>
+            <td th:text="${instrument.getTicker()}"></td>
+            <td th:text="${instrument.getCurrency()}"></td>
+            <td th:text="${instrument.getStatus()}"></td>
+            <td><a th:href="@{/instruments/{id}/READY(id=${instrument.getId()})}">Ready</a></td>
+            <td><a th:href="@{/instruments/{id}/READY_TO_BUY(id=${instrument.getId()})}">ReadyToBuy</a></td>
+            <td><a th:href="@{/instruments/{id}/DISABLED(id=${instrument.getId()})}">Disable</a></td>
+        </tr>
+        </tbody>
+    </table>
+</center>
+
+</body>
+</html>
